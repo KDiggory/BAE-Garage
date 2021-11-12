@@ -40,12 +40,18 @@ public class Runner {
 
 		garage.getGarage();
 		garage.getPedalGarage();
-		garage.costRepairTanks();
-		garage.costRepairBikes();
-		garage.costRepairHorseDrawn();
+		garage.costRepairTanksAll();
+		garage.costRepairBikesAll();
+		garage.costRepairHorseDrawnAll();
 		garage.costRepairTotal();
 		garage.costRepairSingleBike((PedalPowered) bike);
-
+		
+		Garage.removeByType(bike);
+		
+		garage.fix(carriage);
+		garage.fix(trike);
+		garage.costSoFar();
+		
 		garage.getHorseGarage();
 		garage.clearAllGarages();
 		garage.getGarage();
