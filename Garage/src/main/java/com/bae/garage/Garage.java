@@ -19,7 +19,7 @@ public class Garage {
 		garage.add(toAdd);
 		splitGarage(toAdd);
 	}
-
+ 
 	public void removeVehicle(Vehicles toRemove) {
 		garage.remove(toRemove);
 	}
@@ -91,9 +91,9 @@ public class Garage {
 		} return soFar;
 	}
 	
-	public void costSoFar() {
+	public int costSoFar() {
 		System.out.println("The cost of all the vehicles you want repaired is: " + soFar);
-		
+		return soFar;
 	}
 
 	public int costRepairSingleTank(Tank vehicleToFix) {
@@ -104,14 +104,14 @@ public class Garage {
 		return total;
 	}
 
-	public void costRepairTanksAll() {
+	public int costRepairTanksAll() {
 		int total = 0;
 		for (Vehicles vehicle : tankGarage) {
 			total = total + ((Tank) vehicle).costOfRepair();
 		}
 		total = (int) (total * 2);
 		System.out.println("The cost to repair all tanks is: £" + total);
-
+return total;
 	}
 
 	public int costRepairSingleBike(PedalPowered vehicleToFix) {
@@ -223,6 +223,26 @@ public class Garage {
 		} }else {
 			System.out.println("This garage is empty");
 		}
+	}
+
+	public int size() {
+		int size = garage.size();
+		return size;
+	}
+	
+	public int horseSize() {
+		int size = horseGarage.size();
+		return size;
+	}
+	
+	public int tankSize() {
+		int size = tankGarage.size();
+		return size;
+	}
+	
+	public int bikeSize() {
+		int size = pedalGarage.size();
+		return size;
 	}
 
 }
